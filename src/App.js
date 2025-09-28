@@ -385,7 +385,7 @@ export default function App() {
   const [suggestions, setSuggestions] = React.useState([]);
   const [title, setTitle] = React.useState('Mevalurkuppam');
   const [unit, setUnit] = React.useState('C'); // 'C' | 'F'
-  const [aqi, setAqi] = React.useState(null);
+  const [, setAqi] = React.useState(null);
   const [theme, setTheme] = React.useState('theme-mild');
   const [geminiSummary, setGeminiSummary] = React.useState('');
   const [isGeneratingSummary, setIsGeneratingSummary] = React.useState(false);
@@ -394,16 +394,16 @@ export default function App() {
   const generateWeatherSummary = async (weatherData) => {
     setIsGeneratingSummary(true);
     try {
-      const prompt = `Generate a friendly, concise weather summary based on this data:
-      Current temperature: ${Math.round(weatherData.current?.temp ?? 0)}°C
-      Feels like: ${Math.round(weatherData.current?.feelsLike ?? 0)}°C
-      Humidity: ${weatherData.current?.humidity ?? 0}%
-      Wind: ${Math.round(weatherData.current?.windKmh ?? 0)} km/h
-      Daily high: ${Math.round(weatherData.daily?.[0]?.max ?? 0)}°C
-      Daily low: ${Math.round(weatherData.daily?.[0]?.min ?? 0)}°C
-      UV Index: ${weatherData.sun?.uvMax ?? 'N/A'}
-      
-      Please provide a natural, conversational summary in 2-3 sentences.`;
+      // Generate a friendly, concise weather summary based on this data:
+      // Current temperature: ${Math.round(weatherData.current?.temp ?? 0)}°C
+      // Feels like: ${Math.round(weatherData.current?.feelsLike ?? 0)}°C
+      // Humidity: ${weatherData.current?.humidity ?? 0}%
+      // Wind: ${Math.round(weatherData.current?.windKmh ?? 0)} km/h
+      // Daily high: ${Math.round(weatherData.daily?.[0]?.max ?? 0)}°C
+      // Daily low: ${Math.round(weatherData.daily?.[0]?.min ?? 0)}°C
+      // UV Index: ${weatherData.sun?.uvMax ?? 'N/A'}
+      // 
+      // Please provide a natural, conversational summary in 2-3 sentences.
 
       // For demo purposes, we'll generate a mock summary
       // In a real implementation, you would call the Gemini API here
