@@ -35,7 +35,7 @@ body {
   line-height: 1.5;
 }
 
-/* Mobile-first responsive base */
+/* Desktop-first responsive base */
 @media (min-width: 768px) {
   body {
     font-size: var(--desktop-font-size);
@@ -46,26 +46,10 @@ body {
   position: relative;
   min-height: 100vh;
   color: var(--text);
-  padding: var(--mobile-padding);
-  max-width: 100%;
+  padding: var(--desktop-padding);
+  max-width: 800px;
   margin: 0 auto;
   width: 100%;
-}
-
-/* Mobile styles (default) */
-@media (max-width: 767px) {
-  .app {
-    padding: 12px;
-    max-width: 100%;
-  }
-}
-
-/* Tablet styles */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .app {
-    padding: var(--desktop-padding);
-    max-width: 600px;
-  }
 }
 
 /* Desktop styles */
@@ -118,17 +102,9 @@ body {
   word-break: break-word;
 }
 
-/* Responsive header */
-@media (min-width: 768px) {
-  .header {
-    font-size: 22px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .header {
-    font-size: 24px;
-  }
+/* Header styles */
+.header {
+  font-size: 24px;
 }
 
 .search { 
@@ -186,101 +162,65 @@ body {
   background: rgba(255,255,255,.12);
 }
 
-/* Mobile search improvements */
-@media (max-width: 767px) {
-  .search input {
-    padding: 16px;
-    font-size: 16px;
-  }
-  
-  .suggestions {
-    max-height: 180px;
-  }
-  
-  .suggestions button {
-    padding: 14px 16px;
-    font-size: 15px;
-  }
-}
 
 .current { 
   margin-top: 12px; 
   position: relative; 
-  text-align: center;
+  text-align: left;
   padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .temp { 
-  font-size: var(--mobile-temp-size); 
+  font-size: 120px; 
   line-height: 0.9; 
   font-weight: 700; 
   text-shadow: 0 10px 30px rgba(0,0,0,.35);
   margin: 0;
+  margin-bottom: 10px;
 }
 
 .desc { 
-  margin-top: 8px; 
+  margin-top: 0; 
   color: var(--muted); 
   font-weight: 600; 
-  font-size: 16px;
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
 .range { 
-  margin-top: 8px; 
+  margin-top: 0; 
   color: var(--muted); 
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .hero-illustration { 
   display: none; 
 }
 
-/* Responsive temperature display */
-@media (min-width: 768px) {
-  .temp {
-    font-size: var(--desktop-temp-size);
-  }
-  
-  .desc {
-    font-size: 18px;
-  }
-  
-  .range {
-    font-size: 16px;
-  }
+/* Temperature display */
+.temp {
+  font-size: 110px;
 }
 
-@media (min-width: 1024px) {
-  .temp {
-    font-size: 110px;
-  }
+.desc {
+  font-size: 18px;
+}
+
+.range {
+  font-size: 16px;
 }
 
 /* Weather Mascot */
 .weather-mascot {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 80px;
-  height: 80px;
+  top: 20px;
+  right: 20px;
+  width: 120px;
+  height: 120px;
   z-index: 10;
-}
-
-/* Responsive mascot */
-@media (min-width: 768px) {
-  .weather-mascot {
-    top: 20px;
-    right: 20px;
-    width: 100px;
-    height: 100px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .weather-mascot {
-    width: 120px;
-    height: 120px;
-  }
 }
 
 .mascot-container {
@@ -444,19 +384,10 @@ body {
   margin: 20px 0;
 }
 
-/* Responsive weather grid */
-@media (max-width: 767px) {
-  .weather-grid {
-    gap: 8px;
-    margin: 16px 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .weather-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
+/* Weather grid */
+.weather-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 
 .weather-metric {
@@ -477,13 +408,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Mobile weather metric adjustments */
-@media (max-width: 767px) {
-  .weather-metric {
-    padding: 12px;
-    min-height: 70px;
-  }
-}
 
 .metric-label {
   font-size: 12px;
@@ -681,25 +605,9 @@ body {
   margin-bottom: 20px;
 }
 
-/* Responsive main content */
-@media (max-width: 767px) {
-  .main-content {
-    padding: 16px;
-    border-radius: 20px;
-    margin-bottom: 16px;
-  }
-}
-
-@media (min-width: 768px) {
-  .main-content {
-    padding: 24px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .main-content {
-    padding: 32px;
-  }
+/* Main content */
+.main-content {
+  padding: 32px;
 }
 
 @keyframes slideInFromRight {
@@ -719,19 +627,10 @@ body {
   margin-top: 16px; 
 }
 
-/* Responsive stack layout */
-@media (max-width: 767px) {
-  .stack {
-    gap: 12px;
-    margin-top: 12px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .stack {
-    gap: 20px;
-    margin-top: 20px;
-  }
+/* Stack layout */
+.stack {
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .card {
@@ -767,13 +666,6 @@ body {
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
-/* Mobile hourly improvements */
-@media (max-width: 767px) {
-  .hourly {
-    gap: 6px;
-    padding: 8px 0;
-  }
-}
 
 .hourly::-webkit-scrollbar {
   height: 4px;
@@ -804,21 +696,11 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Mobile hour adjustments */
-@media (max-width: 767px) {
-  .hour {
-    min-width: 70px;
-    width: 70px;
-    padding: 10px 4px;
-  }
-}
-
-@media (min-width: 768px) {
-  .hour {
-    min-width: 85px;
-    width: 85px;
-    padding: 14px 8px;
-  }
+/* Hour adjustments */
+.hour {
+  min-width: 85px;
+  width: 85px;
+  padding: 14px 8px;
 }
 
 .hour:hover {
@@ -885,19 +767,6 @@ body {
   background: rgba(255,255,255,.1);
 }
 
-/* Mobile controls */
-@media (max-width: 767px) {
-  .controls {
-    gap: 8px;
-    margin-top: 8px;
-  }
-  
-  .toggle {
-    padding: 10px 14px;
-    font-size: 15px;
-    min-width: 60px;
-  }
-}
 
 .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
 .tile { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 12px; }
@@ -908,84 +777,29 @@ body {
 .sun-arc svg { width: 100%; height: 100%; }
 .sun-arc .time-row { display: flex; justify-content: space-between; margin-top: -8px; color: var(--muted); }
 
-/* Touch-friendly improvements for mobile */
-@media (max-width: 767px) {
-  /* Larger touch targets */
-  .suggestions button {
-    min-height: 44px; /* iOS recommended minimum touch target */
-  }
-  
-  .toggle {
-    min-height: 44px;
-  }
-  
-  .gemini-button {
-    min-height: 44px;
-    padding: 14px 24px;
-  }
-  
-  /* Disable hover effects on touch devices */
-  .card:hover {
-    transform: none;
-  }
-  
-  .weather-metric:hover {
-    transform: none;
-  }
-  
-  .hour:hover {
-    transform: none;
-  }
-  
-  /* Better spacing for mobile */
-  .daily-item {
-    padding: 12px;
-  }
-  
-  .alert {
-    padding: 12px;
-  }
-}
-
-/* Tablet optimizations */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .app {
-    padding: 20px;
-  }
-  
-  .main-content {
-    padding: 24px;
-  }
-  
-  .weather-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 /* Desktop optimizations */
-@media (min-width: 1024px) {
-  .app { 
-    max-width: 100%; 
-  }
-  
-  .stack { 
-    grid-template-columns: 1fr; 
-  }
-  
-  /* Enable hover effects on desktop */
-  .card:hover { 
-    transform: translateY(-4px) rotateX(1deg) rotateY(-1deg); 
-    box-shadow: 0 18px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.2); 
-  }
-  
-  .weather-metric:hover {
-    transform: translateY(-2px);
-  }
-  
-  .hour:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  }
+.app { 
+  max-width: 100%; 
+}
+
+.stack { 
+  grid-template-columns: 1fr; 
+}
+
+/* Enable hover effects on desktop */
+.card:hover { 
+  transform: translateY(-4px) rotateX(1deg) rotateY(-1deg); 
+  box-shadow: 0 18px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.2); 
+}
+
+.weather-metric:hover {
+  transform: translateY(-2px);
+}
+
+.hour:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* Large desktop */

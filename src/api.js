@@ -44,7 +44,7 @@ function normalizeOpenMeteo(data) {
   const hourly = data.hourly ?? {};
   const daily = data.daily ?? {};
 
-  const hourlyItems = (hourly.time || []).slice(0, 7).map((t, i) => ({
+  const hourlyItems = (hourly.time || []).slice(0, 12).map((t, i) => ({
     time: new Date(t),
     temp: hourly.temperature_2m?.[i],
     pop: hourly.precipitation_probability?.[i],
